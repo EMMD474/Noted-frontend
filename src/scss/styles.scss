@@ -1,0 +1,458 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.input {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    input {
+        width: 90%;
+        height: 3em;
+        border-radius: .3em;
+        color: teal;
+        padding: .5em;
+        border: 2px solid teal;
+        outline: none;
+        background: transparent;
+    }
+    .label {
+        position: absolute;
+        margin: .5em;
+        color: teal;
+    }
+    input:focus ~ .label,
+    input:valid ~ .label {
+        color: purple;
+    }
+
+}
+
+// code for the login and signup forms
+.cont {
+    display: flex;
+    width: 40em;
+    height: 25em;
+    box-shadow: 3px 3px 3px 0 #222;
+    border-radius: .5em;
+    margin-top: 4em;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    
+
+    .main-heading {
+        position: absolute;
+        top: .5em;
+        left: 25%;
+        width: 50%;
+        text-align: center;
+        z-index: 100;
+        border-bottom: 1px solid teal;
+    }
+
+    .cover {
+        // display: none;
+        position: absolute;
+        top: -20em;
+        left: 0;
+        width: 60em;
+        height: 50em;
+        background: whitesmoke;
+        // transform: rotate(10deg) skew(40deg) translateX(160px);
+        transform: rotate(-50deg) skew(35deg) translateY(20px);
+        transform-origin: bottom left;
+        
+    }
+    .cover2 {
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50em;
+        height: 30em;
+        background: whitesmoke;
+        // transform: rotate(10deg) skew(37deg) translateX(500px);
+        transform-origin: bottom right;
+        z-index: 10;
+    }
+
+    .box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+        .stack {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 2em;
+            padding-left: 2em;
+
+            .para {
+                padding-right: 0;
+
+            }
+    
+            .tp {
+                font-size: 1em;
+            }
+            .heading {
+                font-size: 1.5em;
+            }
+    
+            @media only screen and (max-width: 500px) {
+                display: none;
+            }
+        }
+    
+        .form {
+            display:  flex;
+            flex-direction: column;
+            width: 60%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            
+            // border: 2px solid;
+    
+            .head {
+                padding-bottom: 3px;
+                border-bottom: 2px solid teal;
+                width: 70%;
+                text-align: center;
+                margin-bottom: 1em;
+            }
+            // .mar {
+            //     margin-top: 2em;
+            // }
+            .input-box {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                margin-bottom: 1.4em;
+    
+    
+                input{
+                    height: 3em;
+                    padding: .5em;
+                    outline: none;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 2px solid teal;
+                    color: teal;
+                    transition: all .5s;
+                }
+                
+                label {
+                    position: absolute;
+                    top: .5em;
+                    color: teal;
+                    padding-left: .5em;
+                    transition: all .5s ;
+                }
+                i {
+                    position: absolute;
+                    top: .5em;
+                    right: .5em;
+                    color: teal;
+                    transition: all .5s ;
+                }
+                input:focus {
+                    border-radius: .3em;
+                    border-bottom: 2px solid rgb(3, 189, 189);
+                }
+                input:focus.err {
+                    border-bottom: 2px solid red;
+
+                }
+                input:valid ~ label,
+                input:focus ~ label {
+                    top: -1em;
+                    color: rgb(3, 189, 189);
+                }
+                input:valid ~ i,
+                input:focus ~ i {
+                    color: rgb(3, 189, 189);
+                }
+            }
+            .btn {
+                width: 70%;
+    
+    
+                input {
+                    width: 100%;
+                    height: 2.4em;
+                    padding: .1em;
+                    background: linear-gradient(to right, #000, teal);
+                    border: none;
+                    border-radius: .4em;
+                    outline: none;
+                    color: rgb(3, 166, 166);
+                    font-size: 1em;
+                    cursor: pointer;
+                    transition: all .5s ;
+                }
+                input:hover {
+                    // transform: rotateY(360deg);
+                    background: linear-gradient(to left, #000, teal);
+                    color: rgb(6, 209, 209);
+                }
+            }
+            .links {
+                margin-top: .5em;
+                width: 82%;
+                display: flex;
+                justify-content: space-between;
+    
+                .tp {
+                    padding-bottom: .3em;
+                    transition:  .3s;
+                }
+                .tp:hover {
+                    border-bottom: 1px solid teal;
+                }
+            }
+    
+            @media only screen and (max-width: 500px) {
+                width: 100%;
+            }
+    
+        }
+    }
+    .login {
+        z-index: 10;
+
+        .stack {
+            .para {
+                padding-right: 2.2em;
+
+            }
+        }
+    }
+    .sign {
+        // display: flex;
+        z-index: -10;
+
+
+        .stack {
+            display: flex;
+            text-align: right;
+            transform: translateX(300px);
+        }
+        .form {
+            margin-top: 1em;
+            transform: translateX(-330px);
+
+
+            .input-box {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+}
+.cont.animate-sign {
+    .cover {
+        animation: log-down 1.5s forwards, animate-sign 1.5s forwards 1.5s;
+    }
+    // .cover {
+    //     animation: no-show 1s forwards 1s;
+    // }
+    .login {
+        animation: no-show 1s forwards 1s;
+        form {
+            .input1 {
+             animation: log 1s forwards;
+            } 
+            .input2 {
+             animation: log 1s forwards .2s;
+            }
+            .btn {
+             animation: log 1s forwards .4s;
+            }
+            .links {
+             animation: log 1s forwards .5s;
+            }
+        }
+        .stack {
+            .heading {
+                animation: stack1 1s forwards;
+            }
+            .para {
+                animation: stack1 1s forwards .1s;
+            }
+        }    
+    }
+    .sign {
+        animation: show 1s forwards 1s;
+        form {
+            .input1 {
+             animation: sign 1s forwards 1.2s;
+            } 
+            .input2 {
+             animation: sign 1s forwards 1.3s;
+            }
+            .input3 {
+                animation: sign 1s forwards 1.4s;
+            }
+            .input4 {
+                animation: sign 1s forwards 1.5s;
+            }
+            .btn {
+             animation: sign 1s forwards 1.6s;
+            }
+            .links {
+             animation: sign 1s forwards 1.6s;
+            }
+        }
+        .stack {
+            .heading {
+                animation: stack2 1s forwards 1.1s;
+            }
+            .para {
+                animation: stack2 1s forwards 1.2s;
+            }
+        }    
+
+    }
+   
+}
+.cont.animate-login {
+    // .cover {
+    //     animation: log-down 1.5s forwards, animate-sign 1.5s forwards 1.5s;
+    // }
+    // .cover {
+    //     animation: no-show 1s forwards 1s;
+    // }
+    .login {
+        animation: no-show 1s forwards 1s;
+        form {
+            .input1 {
+             animation: log 1s forwards;
+            } 
+            .input2 {
+             animation: log 1s forwards .2s;
+            }
+            .btn {
+             animation: log 1s forwards .4s;
+            }
+            .links {
+             animation: log 1s forwards .5s;
+            }
+        }
+        .stack {
+            .heading {
+                animation: stack1 1s forwards;
+            }
+            .para {
+                animation: stack1 1s forwards .1s;
+            }
+        }    
+    }
+    .sign {
+        animation: show 1s forwards;
+        form {
+            .input1 {
+             animation: remove-sign 1s forwards .2s;
+            } 
+            .input2 {
+             animation: remove-sign 1s forwards .3s;
+            }
+            .input3 {
+                animation: remove-sign 1s forwards .4s;
+            }
+            .input4 {
+                animation: remove-sign 1s forwards .5s;
+            }
+            .btn {
+             animation: remove-sign 1s forwards .6s;
+            }
+            .links {
+             animation: remove-sign 1s forwards .6s;
+            }
+        }
+        .stack {
+            .heading {
+                animation: remove-stack2 1s forwards .1s;
+            }
+            .para {
+                animation: remove-stack2 1s forwards .2s;
+            }
+        }    
+
+    }
+   
+}
+@keyframes remove {
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes animate-sign {
+    0% {
+        transform:  rotate(0deg) ;
+        // transform-origin: bottom right;
+    }
+    100% {
+        transform: rotate(10deg) skew(37deg) translateX(480px);
+        transform-origin: bottom right;
+    }
+}
+@keyframes log-down {
+    100% {
+        transform: rotate(0deg) skew(0deg) translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes log {
+    100% {
+        transform: translateX(310px);
+    }
+}
+@keyframes sign {
+    100% {
+        transform: translateX(310px);
+    }
+}
+@keyframes remove-sign {
+    100% {
+        transform: translateX(-310px);
+    }
+}
+@keyframes stack1 {
+    100% {
+        transform: translateX(-250px);
+    }
+}
+@keyframes stack2 {
+    100% {
+        transform: translateX(-300px);
+    }
+}
+@keyframes remove-stack2 {
+    100% {
+        transform: translateX(300px);
+    }
+}
+@keyframes show {
+    100% {
+        z-index: 10;
+    }
+}
+@keyframes not-show {
+   100%{ 
+    z-index: -10;
+    }
+}
+
+
+

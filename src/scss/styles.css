@@ -1,0 +1,383 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.input input {
+  width: 90%;
+  height: 3em;
+  border-radius: 0.3em;
+  color: teal;
+  padding: 0.5em;
+  border: 2px solid teal;
+  outline: none;
+  background: transparent;
+}
+.input .label {
+  position: absolute;
+  margin: 0.5em;
+  color: teal;
+}
+.input input:focus ~ .label,
+.input input:valid ~ .label {
+  color: purple;
+}
+
+.cont {
+  display: flex;
+  width: 40em;
+  height: 25em;
+  box-shadow: 3px 3px 3px 0 #222;
+  border-radius: 0.5em;
+  margin-top: 4em;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+.cont .main-heading {
+  position: absolute;
+  top: 0.5em;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+  z-index: 100;
+  border-bottom: 1px solid teal;
+}
+.cont .cover {
+  position: absolute;
+  top: -20em;
+  left: 0;
+  width: 60em;
+  height: 50em;
+  background: whitesmoke;
+  transform: rotate(-50deg) skew(35deg) translateY(20px);
+  transform-origin: bottom left;
+}
+.cont .cover2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50em;
+  height: 30em;
+  background: whitesmoke;
+  transform-origin: bottom right;
+  z-index: 10;
+}
+.cont .box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cont .box .stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+.cont .box .stack .para {
+  padding-right: 0;
+}
+.cont .box .stack .tp {
+  font-size: 1em;
+}
+.cont .box .stack .heading {
+  font-size: 1.5em;
+}
+@media only screen and (max-width: 500px) {
+  .cont .box .stack {
+    display: none;
+  }
+}
+.cont .box .form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.cont .box .form .head {
+  padding-bottom: 3px;
+  border-bottom: 2px solid teal;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.cont .box .form .input-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-bottom: 1.4em;
+}
+.cont .box .form .input-box input {
+  height: 3em;
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid teal;
+  color: teal;
+  transition: all 0.5s;
+}
+.cont .box .form .input-box label {
+  position: absolute;
+  top: 0.5em;
+  color: teal;
+  padding-left: 0.5em;
+  transition: all 0.5s;
+}
+.cont .box .form .input-box i {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  color: teal;
+  transition: all 0.5s;
+}
+.cont .box .form .input-box input:focus {
+  border-radius: 0.3em;
+  border-bottom: 2px solid rgb(3, 189, 189);
+}
+.cont .box .form .input-box input:focus.err {
+  border-bottom: 2px solid red;
+}
+.cont .box .form .input-box input:valid ~ label,
+.cont .box .form .input-box input:focus ~ label {
+  top: -1em;
+  color: rgb(3, 189, 189);
+}
+.cont .box .form .input-box input:valid ~ i,
+.cont .box .form .input-box input:focus ~ i {
+  color: rgb(3, 189, 189);
+}
+.cont .box .form .btn {
+  width: 70%;
+}
+.cont .box .form .btn input {
+  width: 100%;
+  height: 2.4em;
+  padding: 0.1em;
+  background: linear-gradient(to right, #000, teal);
+  border: none;
+  border-radius: 0.4em;
+  outline: none;
+  color: rgb(3, 166, 166);
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.cont .box .form .btn input:hover {
+  background: linear-gradient(to left, #000, teal);
+  color: rgb(6, 209, 209);
+}
+.cont .box .form .links {
+  margin-top: 0.5em;
+  width: 82%;
+  display: flex;
+  justify-content: space-between;
+}
+.cont .box .form .links .tp {
+  padding-bottom: 0.3em;
+  transition: 0.3s;
+}
+.cont .box .form .links .tp:hover {
+  border-bottom: 1px solid teal;
+}
+@media only screen and (max-width: 500px) {
+  .cont .box .form {
+    width: 100%;
+  }
+}
+.cont .login {
+  z-index: 10;
+}
+.cont .login .stack .para {
+  padding-right: 2.2em;
+}
+.cont .sign {
+  z-index: -10;
+}
+.cont .sign .stack {
+  display: flex;
+  text-align: right;
+  transform: translateX(300px);
+}
+.cont .sign .form {
+  margin-top: 1em;
+  transform: translateX(-330px);
+}
+.cont .sign .form .input-box {
+  margin-bottom: 1em;
+}
+
+.cont.animate-sign .cover {
+  animation: log-down 1.5s forwards, animate-sign 1.5s forwards 1.5s;
+}
+.cont.animate-sign .login {
+  animation: no-show 1s forwards 1s;
+}
+.cont.animate-sign .login form .input1 {
+  animation: log 1s forwards;
+}
+.cont.animate-sign .login form .input2 {
+  animation: log 1s forwards 0.2s;
+}
+.cont.animate-sign .login form .btn {
+  animation: log 1s forwards 0.4s;
+}
+.cont.animate-sign .login form .links {
+  animation: log 1s forwards 0.5s;
+}
+.cont.animate-sign .login .stack .heading {
+  animation: stack1 1s forwards;
+}
+.cont.animate-sign .login .stack .para {
+  animation: stack1 1s forwards 0.1s;
+}
+.cont.animate-sign .sign {
+  animation: show 1s forwards 1s;
+}
+.cont.animate-sign .sign form .input1 {
+  animation: sign 1s forwards 1.2s;
+}
+.cont.animate-sign .sign form .input2 {
+  animation: sign 1s forwards 1.3s;
+}
+.cont.animate-sign .sign form .input3 {
+  animation: sign 1s forwards 1.4s;
+}
+.cont.animate-sign .sign form .input4 {
+  animation: sign 1s forwards 1.5s;
+}
+.cont.animate-sign .sign form .btn {
+  animation: sign 1s forwards 1.6s;
+}
+.cont.animate-sign .sign form .links {
+  animation: sign 1s forwards 1.6s;
+}
+.cont.animate-sign .sign .stack .heading {
+  animation: stack2 1s forwards 1.1s;
+}
+.cont.animate-sign .sign .stack .para {
+  animation: stack2 1s forwards 1.2s;
+}
+
+.cont.animate-login .login {
+  animation: no-show 1s forwards 1s;
+}
+.cont.animate-login .login form .input1 {
+  animation: log 1s forwards;
+}
+.cont.animate-login .login form .input2 {
+  animation: log 1s forwards 0.2s;
+}
+.cont.animate-login .login form .btn {
+  animation: log 1s forwards 0.4s;
+}
+.cont.animate-login .login form .links {
+  animation: log 1s forwards 0.5s;
+}
+.cont.animate-login .login .stack .heading {
+  animation: stack1 1s forwards;
+}
+.cont.animate-login .login .stack .para {
+  animation: stack1 1s forwards 0.1s;
+}
+.cont.animate-login .sign {
+  animation: show 1s forwards;
+}
+.cont.animate-login .sign form .input1 {
+  animation: remove-sign 1s forwards 0.2s;
+}
+.cont.animate-login .sign form .input2 {
+  animation: remove-sign 1s forwards 0.3s;
+}
+.cont.animate-login .sign form .input3 {
+  animation: remove-sign 1s forwards 0.4s;
+}
+.cont.animate-login .sign form .input4 {
+  animation: remove-sign 1s forwards 0.5s;
+}
+.cont.animate-login .sign form .btn {
+  animation: remove-sign 1s forwards 0.6s;
+}
+.cont.animate-login .sign form .links {
+  animation: remove-sign 1s forwards 0.6s;
+}
+.cont.animate-login .sign .stack .heading {
+  animation: remove-stack2 1s forwards 0.1s;
+}
+.cont.animate-login .sign .stack .para {
+  animation: remove-stack2 1s forwards 0.2s;
+}
+
+@keyframes remove {
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes animate-sign {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg) skew(37deg) translateX(480px);
+    transform-origin: bottom right;
+  }
+}
+@keyframes log-down {
+  100% {
+    transform: rotate(0deg) skew(0deg) translateY(0px) translateX(0px);
+  }
+}
+@keyframes log {
+  100% {
+    transform: translateX(310px);
+  }
+}
+@keyframes sign {
+  100% {
+    transform: translateX(310px);
+  }
+}
+@keyframes remove-sign {
+  100% {
+    transform: translateX(-310px);
+  }
+}
+@keyframes stack1 {
+  100% {
+    transform: translateX(-250px);
+  }
+}
+@keyframes stack2 {
+  100% {
+    transform: translateX(-300px);
+  }
+}
+@keyframes remove-stack2 {
+  100% {
+    transform: translateX(300px);
+  }
+}
+@keyframes show {
+  100% {
+    z-index: 10;
+  }
+}
+@keyframes not-show {
+  100% {
+    z-index: -10;
+  }
+}/*# sourceMappingURL=styles.css.map */
