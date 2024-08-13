@@ -27,10 +27,11 @@ export const Todo = () => {
   return (
     <Box sx={{
         width: '100%',
-         display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center"
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 5
           }}>
         <Typography variant='h5' gutterBottom color="primary">
             Todos

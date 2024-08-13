@@ -7,6 +7,12 @@ import { SignUp } from './Pages/SignUp'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {teal, purple} from '@mui/material/colors'
 import { Todo } from './Pages/Todo'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { AuthProvider } from './Components/AuthProvider'
+
 
 const theme = createTheme({
   palette: {
@@ -23,14 +29,16 @@ const App = () => {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route element={<LayOut />}>
-            <Route path='/' element={<Notes />} />
-            <Route path='/todo' element={<Todo />} />
-          </Route>
-          <Route path='/login' element={<Login />} />
-          <Route path='/sign' element={<SignUp />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route element={<LayOut />}>
+              <Route path='/' element={<Notes />} />
+              <Route path='/todo' element={<Todo />} />
+            </Route>
+            <Route path='/login' element={<Login />} />
+            <Route path='/sign' element={<SignUp />} />
+          </Routes>
+        </AuthProvider>
       </ThemeProvider>
     </Router>
   )

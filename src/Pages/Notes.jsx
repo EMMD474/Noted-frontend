@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../Components/Card";
 import { Box, Divider, Grid, Typography } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../Components/AuthProvider";
 
 export const Notes = () => {
 const [notes, setNotes] = useState([])
+const { isLogged } = useAuth()
+const navigate = useNavigate()
+
+useEffect(() => {
+  if (isLogged) {
+    console.log("Logged in!")
+  } else {
+    navigate('/login')
+  }
+}, [])
 
 const getData = async () => {
   try {
@@ -24,7 +36,7 @@ useEffect(() => {
 }, [])
  
   return (
-    <Box sx={{display: 'flex', flexDirection: "column"}}>
+    <Box sx={{display: 'flex', flexDirection: "column", marginBottom: 5}}>
     <Typography variant="h5" gutterBottom color="primary">
       Notes
     </Typography>
@@ -45,10 +57,6 @@ useEffect(() => {
        importance={note['importance']} />
      })}
    </Grid>}
-      {/* <Typography variant="h6" color="teal">
-        No Notes!
-      </Typography> */}
-    
     </Box>
 
 

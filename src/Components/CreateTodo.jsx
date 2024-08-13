@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Delete } from '@mui/icons-material'
 import Checkbox from '@mui/material/Checkbox';
-import { Box, Divider, IconButton, Stack, Typography } from '@mui/material'
+import { Avatar, Box, Card, CardContent, CardHeader, Divider, Grid, IconButton, Stack, Typography } from '@mui/material'
 import { red, teal } from '@mui/material/colors';
 import useMediaQuery from "@mui/material/useMediaQuery";
+// import { Delete, Favorite, Share } from "@mui/icons-material";
+
 
 const styles = {
     display: 'flex',
@@ -61,6 +63,24 @@ export const CreateTodo = ({ checked, name, created_at, importance}) => {
                 <Delete sx={{color: isChecked ? red[400] : 'gray'}} />
             </IconButton>
         </Box>
+
+        {/* <Grid item xs={12} sm={6} md={4} lg={3} >
+            <Card>
+                <CardHeader
+                    avatar={<Avatar sx={{bgcolor: "purple"}}>T</Avatar>}
+                    action={<IconButton sx={{color: red[500]}}><Delete /></IconButton>}
+                    title={importance}
+                    subheader={created_at}
+                />
+                <CardContent>
+                    <Typography variant="body2">
+                        {name}
+                    </Typography>
+                </CardContent>
+            </Card>
+
+        </Grid> */}
+
         {/* <Divider sx={{ width: isMobile ? "100%": "25em"}} />  */}
     </>
   )

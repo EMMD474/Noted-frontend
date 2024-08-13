@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import { Close, Create } from "@mui/icons-material";
 import React, { useState } from "react";
-import "../../css/styles.css";
+// import "../scss/styles.css"
+import "../scss/styles.css"
 
 const styles = {
   position: "absolute",

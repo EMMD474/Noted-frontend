@@ -35,7 +35,7 @@ import {
 } from "@mui/icons-material";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import "../../css/styles.css";
+import "../scss/styles.css"
 import { CreateNote } from "./CreateNote";
 
 export const LayOut = () => {
@@ -130,7 +130,11 @@ export const LayOut = () => {
           <Divider />
           <List>
             {drawerItems.map((item, index) => (
-              <ListItem button key={index} onClick={() => handleNavigate(item.path)}>
+              <ListItem 
+                button 
+                key={index} 
+                sx={{bgcolor: location.pathname === item.path? "whitesmoke": "white"}} 
+                onClick={() => handleNavigate(item.path)}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItem>
